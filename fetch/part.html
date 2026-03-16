@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: brown;
+            color: rgb(215, 192, 149);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #main{
+            margin: 20px;
+            background-color: crimson;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <form id="mainContainer">
+            <input type="number" id="userInput" value="1" min="1" max="10" />       
+            <button onclick="handleclick(event)">search</button>
+        </form>
+    </div>
+<div id="output"></div>
+    <script>
+        const fetchData = async(userIdInput)=>{
+            const output = document.getElementById("output")
+                const data = await fetch(`https://jsonplaceholder.typicode.com/users/${userIdInput}`);
+                const response= await data.json();
+                console.log(response)
+                output.  innerHTML=`
+                ${response.name}
+                `
+            
+        }
+const handleclick = (e)=>{
+    e.preventDefault()
+      const userIdInput = document.getElementById("userInput").value;
+      fetchData(userIdInput)
+
+
+}
+    </script>
+</body>
+</html>

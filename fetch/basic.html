@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #outer{
+        height: 300px;
+        width: 300px;
+        background-color: blueviolet;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+</style>
+<body>
+    <div id="outer">
+
+    </div>
+
+
+    <script>
+        //  fetch("https://jsonplaceholder.typicode.com/users").then((data)=>{
+        //     const out = data.json()
+        //     console.log(out)
+        // }).catch((err)=>{
+        //     console.error(err)
+        // })
+        const fetchData =async ()=>{
+            const outer = document.getElementById("outer");
+            const data = await fetch("https://jsonplaceholder.typicode.com/users/1");
+            const response = await data.json();
+            // console.log(response)
+            // console.log(response.name)
+            // console.log(response.username)
+            // console.log(response.address.street)
+            // console.log(response.address.geo.lat)
+            const inner = document.createElement("div")
+            inner.setAttribute("id","inner");
+            inner.innerHTML =`
+                        <P> name:${response.name}</P>
+                        <P> usrername:${response.username}</P>
+                        <P> email:${response.email}</P>`;
+             outer.appendChild(inner)
+        }
+        fetchData()
+        
+        
+    </script>
+</body>
+</html>

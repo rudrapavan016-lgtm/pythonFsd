@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: white;
+            background-size: cover;
+            background-image: url(royal.jpg);
+        }
+        #main{
+            border: 3px solid black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+    
+        }
+        .box{
+            border: 2px solid black;
+            height: 300px;
+            width: 300px;
+            display: flex;
+            display: inline-block;
+            margin:50px ;
+            /* overflow: scroll; */
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        #main .box img{
+            display: block;
+            width: 100%;
+            height: 50%;
+            object-fit:fill;
+        }
+
+        
+    </style>
+</head>
+<body>  
+<h1>Royal enfield </h1>
+    <div id="main">
+        <div class="box">
+            <img src="gt.jpg" alt="Gt 650" >
+             <h1>GT  650</h1>
+            <p> 
+Mileage: Around ≈ 27 <km>
+
+Price (Ex-showroom): Roughly ₹3.18 Lakh – ₹3.44 Lakh in India.</p>
+        </div>
+        <div class="box">
+            <img src="he.jpg" alt="himalayan">
+            <h1>himalayan</h1>
+            <P>Engine & CC : ~452 cc .
+               Mileage Approx. Mileage: ~30 km/l
+                Ex-Showroom Price (India):Approx ₹2.85 L – ₹3.37 L
+            </P>
+        </div>
+        <div class="box">
+            <img src="cla.jpg" alt="classic 350">
+            <h1>classic 350</h1>
+            <p>Engine: 349 cc
+                mileage is ≈ 41.55 km/l.
+                Ex-Showroom Price (India):                Around ₹1.81 Lakh – ₹2.16 Lakh
+            </p>
+        </div>
+        
+    </div>
+</body>
+</html>
